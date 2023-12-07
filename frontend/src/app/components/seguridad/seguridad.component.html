@@ -1,0 +1,67 @@
+<div class="contenido">
+    <h1>Lista de control de Acceso</h1>
+<br>
+<h2>Routers Disponibles</h2>
+<div class="primeros">
+<form>
+
+    <div class="form-group row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Nombre</label>{{nombre_dipostivo1}}
+      </div>
+
+    <div class="form-group row">
+      <label for="staticEmail" class="col-sm-2 col-form-label">Dirección Ip del dispositivo</label>{{ip_dispositivo1}}
+    </div>
+
+    <div class="form-group row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Mascara del dispositivo</label>{{marcara_dispositivo1}}
+      </div>
+
+      <div class="form-group row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Acceso:</label>{{acceso1}}
+      </div>
+<br>
+      <button [disabled]="bloquear" type="button" class="btn btn-danger" (click)="DenegarAcceso()">Denegar Acceso</button>
+      <button [disabled]="bloquear2" type="button" class="btn btn-success" (click)="permitirAcceso()">Permitir Acceso</button>
+  </form>
+</div>
+<br>
+
+<div class="segundos">
+<h2>Equipos Disponibles</h2>
+<form>
+    <div class="form-group row">
+      <label for="staticEmail" class="col-sm-2 col-form-label">Nombre del dispositivo: </label>
+      {{nombre_dipostivo2}}
+    </div>
+
+    <div class="form-group row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Dirección Ip del dispositivo:</label>
+        {{ip_dispositivo2}}
+      </div>
+
+    <div class="form-group row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Mascara del dispositivo:</label>
+        {{marcara_dispositivo2}}
+      </div>
+
+      <div class="form-group row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Acceso:</label>{{acceso2}}
+      </div>
+
+<br>
+      <button [disabled]="bloquear3" type="button" class="btn btn-danger"  (click)="DenegarAcceso1()">Denegar Acceso</button>
+      <button [disabled]="bloquear4"type="button" class="btn btn-success"  (click)="permitirAcceso1()">Permitir Acceso</button>
+  </form>
+</div>
+
+<br>
+
+</div>
+
+<div class="botones">
+
+    <button type="button" class="btn btn-danger">Cancelar</button>
+    <button type="button" class="btn btn-success">Guardar cambios</button>
+
+</div>
