@@ -1,0 +1,23 @@
+.contenido{
+    padding-top: 2%;
+    padding-left: 10%;
+   padding-right: 10%;
+   padding-bottom: 4%;
+}
+
+.botones{
+    margin-top: 1%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 10%;
+}
+
+button{
+    margin-left: 1%;
+}
+
+h1{
+    font-size: 45px;
+    color: white;
+    background: #20b901;
+}

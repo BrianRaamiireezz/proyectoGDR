@@ -14,11 +14,16 @@ nombre_dipostivo1 = 'Router1';
 ip_dispositivo1 = '192.168.1.5';
 marcara_dispositivo1 = '255.255.255.0';
 acceso1 = 'Permitido';
+MAC1='00:1e:c2:9e:28:6b';
+
 //Variables del equipo
 nombre_dipostivo2 = 'PC 1';
 ip_dispositivo2 = '192.168.1.51';
 marcara_dispositivo2 = '255.255.255.0';
 acceso2 = 'Denegado';
+MAC2='00:98:b2:a4:35:d3'
+
+
 //Variables de bloquear boton
 bloquear: boolean = false;
 bloquear2: boolean = false;
@@ -37,7 +42,8 @@ ngOnInit(): void {
  }else{
   this.bloquear3=true;
  }
-
+this.MAC1= this.MAC1.toUpperCase();
+this.MAC2=this.MAC2.toUpperCase();
 }
 
 permitirAcceso() {
