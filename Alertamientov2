@@ -1,0 +1,29 @@
+import psutil
+import time
+
+def obtener_trafico_puertos():
+    conexiones = psutil.net_connections(kind='inet')
+    trafico_puertos = {}
+
+    for conn in conexiones:
+        if conn.status == 'ESTABLISHED':
+            puerto_local = conn.laddr.port
+            trafico_puertos[puerto_local] = trafico_puertos.get(puerto_local, 0) + conn.sent + conn.recv
+
+    return trafico_puertos
+
+def alertar_puertos(trafico_puertos, umbral):
+    for puerto, trafico in trafico_puertos.items():
+        if trafico > umbral:
+            print(f"Alerta: Puerto {puerto} está utilizando demasiado tráfico ({trafico} bytes)")
+
+def main():
+    umbral_alerta = 1000000  # Ajusta este umbral según tus necesidades (en bytes)
+
+    while True:
+        trafico_puertos = obtener_trafico_puertos()
+        alertar_puertos(trafico_puertos, umbral_alerta)
+        time.sleep(60)  # Verifica cada 60 segundos
+
+if __name__ == "__main__":
+    main()
